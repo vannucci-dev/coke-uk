@@ -1,0 +1,342 @@
+.section-intro {
+    position: relative;
+
+    height: 85vh;
+
+    &__logo{
+        margin-top: 10rem;
+        margin-left: 3rem;
+
+        &-black,
+        &-red{
+            position: absolute;
+        }
+        &-red{
+            left: 3rem;
+            top: 2rem;
+            z-index: -4;
+        }
+    }
+
+    &__waves{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+        &-empty,
+        &-red{
+            position: relative;
+        }
+
+        &-empty{
+            z-index: 10;
+            top: 22rem;
+            left: -4rem;
+        }
+    }
+
+    &__menu{
+        position: absolute;
+        right: 10rem;
+        bottom: 30rem;
+
+        &-link:visited,
+        &-link:link,
+        &-link:active{
+            text-decoration: none;
+            color: var(--color-black);
+        }
+
+        &-link{
+            position: relative;
+            
+            div{
+                width: 40rem;
+                height: 3rem;
+                background-color: var(--color-primary);
+                opacity: 50%;
+
+                position: absolute;
+                top: 4.5rem;
+                left: 4rem;
+                z-index: -2;
+                transition: all .5s;
+            }
+        }
+
+        &-link:hover{
+            div{
+                transform: translateX(-4.5rem);
+            }
+        }
+
+        &-text{
+            @include textH3;
+            margin-bottom: -1rem;
+        }
+    }
+
+    &__img{
+        height: 80rem;
+        width: auto;
+        position: absolute;
+        transform: rotate(40deg);
+        left: -10rem;
+        bottom: -25rem;
+        z-index: 9;
+
+        &:hover{
+            animation: shake 1s;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+.section-sustainability{
+    margin-top: -1.2rem;
+    display: flex;
+    justify-content: space-between;
+    height: 91rem;
+    position: relative;
+    overflow: hidden;
+    border-top: 7px black solid;
+
+    &-lx{
+        margin: 12rem 0 0 10rem;
+        position: relative;
+
+        div{
+            width: 40rem;
+            height: 3rem;
+            background-color: var(--color-primary);
+            opacity: 30%;
+
+            position: absolute;
+            top: 4.5rem;
+            left: 8rem;
+            transition: all .5s;
+        }
+    }
+
+    &-rx{
+        transform: scaleX(-1);
+        width: 150rem;
+        position: relative;
+        bottom: -14rem;
+        right: 3rem;
+    }
+    &__title{
+        @include textH3;
+        color: white;
+        
+    }
+
+    &__text{
+        width: 60%;
+        color: white;
+        font-size: 3rem;
+        font-weight: 200;
+        margin-top: 20rem;
+    }
+
+
+}
+.section-sustainability::after{
+    content: "";
+    background-image: url("https://images.unsplash.com/photo-1471289660181-7feae98d61ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80");
+    filter: brightness(70%);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
+}
+
+.section-articles{
+    display: flex;
+    height: 72rem;
+    text-align: center;
+    z-index: 0;
+
+    &-lx{
+        
+        width: 70%;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        &__title{
+            margin-top: 30%;
+            transform: translateY(-50%);
+        }
+    }
+    
+    &-lx::after,
+    &-rx::after{
+
+        content: "";
+        background-size: cover;
+        filter: brightness(70%);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1; 
+        transform: scale(1.3);
+        transition: all .6s;
+    }
+
+    &-lx::after{
+        background-image: url("https://d17mj1ha1c2g57.cloudfront.net/v1/fsapS4izMWcWvvr0SOwWbTLVBtQ/1024x576%23/80/shotsmag/production/clips/1596102127272/coke-hero.jpg?v=1&quality=80&format=jpeg");
+
+    }
+    &-rx::after{
+        background-image: url("https://www.coca-cola.co.uk/content/dam/one/gb/en/home-page/carousel/CCJ_Carousel_WWF_desktop.jpg");
+    }
+
+    &-lx:hover{
+        .box{
+            transform: scaleX(1.2) translate(-50%, -30%);
+        }
+        &::after{
+            transform: scale(1.2);
+        }
+    }
+    &-rx:hover{
+        .box{
+            transform: scaleY(1.6) translate(-50%, -50%);
+        }
+        &::after{
+            transform: scale(1.2);
+        }
+    }
+
+    &-rx{
+        width: 30%;
+        position: relative;
+        overflow: hidden;
+
+        &__title{
+            margin-top: 70%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &-rx__title,
+    &-lx__title{
+        @include textH3;
+        font-size: 4rem;
+        color: white;
+        z-index: 200;
+        
+    }
+
+        .box{
+            width: 40rem;
+            height: 3rem;
+            background-color: var(--color-primary);
+            opacity: 30%;
+            z-index: 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .5s;
+        }
+    &-lx{
+        .box{
+            top: 58%;
+            left: 54%;
+        }
+    }
+
+    &-rx{
+        .box{
+            top: 54%;
+        }
+    }
+}
+
+.section-callToAction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    height: 100rem;
+
+    &-up{
+        display: flex;
+        text-align: center;
+        @include textH3;
+
+        div{
+            margin: 7rem;
+            position: relative;
+
+            top: 30rem;
+
+            &::after{
+                content: "";
+                width: 40rem;
+                height: 3rem;
+                background-color: var(--color-primary);
+                opacity: 50%;
+                position: absolute;
+                top: 5rem;
+                left: -5rem;
+                z-index: -1;
+                transition: all .5s;
+            }
+
+            &:hover{
+
+                &::after{
+                    transform: translate(20%) scale(1.2);
+                }
+
+
+            }
+        }
+    }
+
+    &-down{
+        display: flex;
+
+        &__box{
+            margin-left: 5rem;
+
+            &:hover{
+                animation: shakeStill 1s;
+                animation-iteration-count: infinite;
+            }
+        }
+
+
+        &__img{
+            position: relative;
+            top: 30rem;
+            height: 90rem;
+        }
+
+        &__svg{
+            position: relative;
+            top: 34rem;
+            left: 16.5rem;
+        }
+
+    }
+
+    &__bubbles{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+
